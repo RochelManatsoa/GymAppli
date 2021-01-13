@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GymnastiqueApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="contact_fragment">Contacts fragment</string>
+    <string name="chat_fragment">Events fragment</string>
+    <string name="group_fragment">Groups fragment</string>
+</resources>

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "498785903636",
+    "project_id": "toulousegymapp-6b983",
+    "storage_bucket": "toulousegymapp-6b983.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498785903636:android:4d5ae955299a0872f07301",
+        "android_client_info": {
+          "package_name": "com.example.gymnastiqueapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498785903636-te8kqpl04r82vme74vhqjqoi95r8eh99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdagHSTnaO3OHJ1lyZa2p_bKwWtLxfclo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498785903636-te8kqpl04r82vme74vhqjqoi95r8eh99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498785903636:android:a09410c9f38f1967f07301",
+        "android_client_info": {
+          "package_name": "com.example.toulousegymapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498785903636-te8kqpl04r82vme74vhqjqoi95r8eh99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdagHSTnaO3OHJ1lyZa2p_bKwWtLxfclo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498785903636-te8kqpl04r82vme74vhqjqoi95r8eh99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
