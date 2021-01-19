@@ -15,7 +15,7 @@
         >
     </item>
     <item
-        android:title="Créer un groupe"
+        android:title="Joindre un groupe"
         android:id="@+id/main_create_group_option"
         app:showAsAction="never"
         >

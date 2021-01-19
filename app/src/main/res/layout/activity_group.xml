@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.ContactsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".GroupActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contact_list"
+        <include
+            layout="@layout/app_bar_layout"
+            android:id="@+id/find_group_toolbar">
+
+        </include>
+
+        <ListView
+            android:id="@+id/list_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_below="@+id/find_group_toolbar"/>
 
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fab_invite_friend"
+        android:src="@drawable/ic_group_add_24"
+        android:id="@+id/fab_add_group"
         android:layout_gravity="end|bottom"
         app:fabSize="normal"
         android:layout_margin="16dp"
         android:elevation="6dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:src="@drawable/ic_baseline_person_add_24">
+        android:backgroundTint="@color/colorPrimaryDark">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

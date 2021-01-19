@@ -94,10 +94,9 @@ import com.google.firebase.database.ValueEventListener;
           // initialize intent
           Intent intent = new Intent(activity, aClass);
           // set flags
-          intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+          //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
           // start activity
           activity.startActivity(intent);
-          activity.finish();
       }
 
       @Override
@@ -117,56 +116,18 @@ import com.google.firebase.database.ValueEventListener;
             redirectActivity(MainActivity.this, LoginActivity.class);
           }
           if(item.getItemId() == R.id.main_create_group_option){
-              RequestNewGroup();
+             redirectActivity(MainActivity.this, GroupActivity.class);
           }
           if(item.getItemId() == R.id.main_find_friends_option){
-
+            redirectActivity(MainActivity.this, FindFriendActivity.class);
           }
           if(item.getItemId() == R.id.main_settings_option){
             redirectActivity(MainActivity.this, SettingsActivity.class);
           }
+          if(item.getItemId() == R.id.main_calendar_option){
+            redirectActivity(MainActivity.this, CalendarActivity.class);
+          }
 
           return true;
-      }
-
-      private void RequestNewGroup() {
-          AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
-          builder.setTitle("Nom du groupe");
-
-          final EditText groupNameField = new EditText(MainActivity.this);
-          groupNameField.setHint("ex: Toulouse Gym");
-          builder.setView(groupNameField);
-
-          builder.setPositiveButton("Créer", new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog, int which) {
-                String groupName = groupNameField.getText().toString();
-                if (TextUtils.isEmpty(groupName)){
-                    Toast.makeText(MainActivity.this, "Veuillez entrer le nom du group", Toast.LENGTH_SHORT).show();
-                }else{
-                    CreateNewGroup(groupName);
-                }
-              }
-          });
-
-          builder.setNegativeButton("Retour", new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog, int which) {
-                  dialog.cancel();
-              }
-          });
-
-          builder.show();
-      }
-
-      private void CreateNewGroup(String groupName) {
-        RootRef.child("Groups").child(groupName).setValue("").addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Le groupe "+groupName+" a été créé avec succès", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
       }
   }

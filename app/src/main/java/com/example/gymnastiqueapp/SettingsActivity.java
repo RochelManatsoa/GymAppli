@@ -3,6 +3,7 @@ package com.example.gymnastiqueapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import android.app.ProgressDialog;
@@ -46,6 +47,8 @@ public class SettingsActivity extends AppCompatActivity {
     private static final int GalleryPick = 1;
     private StorageReference UserProfileImageRef;
     private ProgressDialog loadingBar;
+
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,12 +186,12 @@ public class SettingsActivity extends AppCompatActivity {
             Toast.makeText(this, "Veuillez entrer votre status", Toast.LENGTH_SHORT).show();
         }
         else{
-            HashMap<String, String> profileMap = new HashMap<>();
+            HashMap<String, Object> profileMap = new HashMap<>();
             profileMap.put("uid", currentUserID);
             profileMap.put("name", setUserName);
             profileMap.put("status", setUserStatus);
 
-            RootRef.child("Users").child(currentUserID).setValue(profileMap)
+            RootRef.child("Users").child(currentUserID).updateChildren(profileMap)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -210,5 +213,11 @@ public class SettingsActivity extends AppCompatActivity {
         userStatus = (TextView) findViewById(R.id.set_profile_status);
         userProfile = (CircleImageView) findViewById(R.id.set_profile_image);
         loadingBar = new ProgressDialog(this);
+
+        mToolbar = (Toolbar) findViewById(R.id.setting_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Paramètre du compte");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
